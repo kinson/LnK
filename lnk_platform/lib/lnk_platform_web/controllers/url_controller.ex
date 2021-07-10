@@ -1,28 +1,7 @@
 defmodule LnkPlatformWeb.UrlController do
-
   use LnkPlatformWeb, :controller
 
-  # TODO: delete since this probably won't be used
-  def index(conn, _params) do
-    conn
-    |> put_status(200)
-    |> text("Hello")
-  end
-
-  # TODO: delete since this probably won't be used
-  def show(conn, %{"id" => url_id}) do
-    IO.inspect(url_id)
-    # fetch url by id
-
-    conn
-    |> put_status(200)
-    |> text("Hello")
-  end
-
   def show(conn, %{"slug" => slug}) do
-    IO.inspect(slug)
-    # fetch url by slug
-
     conn
     |> put_status(200)
     |> text("Hello there")
@@ -35,19 +14,38 @@ defmodule LnkPlatformWeb.UrlController do
   end
 
   def create(conn, %{"long_url" => long_url}) do
-    case LnkPlatform.Links.create_url(long_url) do
-      {:ok, link} -> link |> IO.inspect
-      {:error, error} -> error |> IO.inspect
-    end
+    case artificial_loading_time(long_url) do
+      {:ok, link} ->
+        put_status(conn, 201) |> render(:create, link: link)
 
-    conn
-    |> put_status(200)
-    |> text("Hello")
+      {:error, cs} ->
+        handle_create_error(conn, cs.errors)
+    end
   end
 
   def create(conn, _params) do
     conn
     |> put_status(400)
     |> text("Bad request")
+  end
+
+  defp handle_create_error(conn, errors) do
+    case hd(errors) do
+      {_, {_, [constraint: :unique, constraint_name: _]}} ->
+        put_status(conn, 409) |> render(:error, error: :unique)
+
+      _ ->
+        put_status(conn, 500) |> render(:error, error: :server)
+    end
+  end
+
+  defp artificial_loading_time(long_url) do
+    sleep = Task.async(fn -> :timer.sleep(1000) end)
+
+    ret = LnkPlatform.Links.create_url(long_url)
+
+    Task.await(sleep)
+
+    ret
   end
 end

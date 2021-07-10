@@ -1,20 +1,35 @@
 import Head from 'next/head'
 import { ChangeEventHandler, FormEventHandler, useState } from 'react';
 import { createShortLink } from '../lib/createShortLink';
+import Icon from '../components/Icon';
+import LoadingIcon from '../components/LoadingIcon';
+import UrlInput from '../components/UrlInput';
+import ShortLink from '../components/ShortLink';
+import ShortenButton from '../components/ShortenButton';
+import CopyButton from '../components/CopyButton';
 
 export default function Home() {
 
   const [url, setUrl] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [shortLink, setShortLink] = useState<string | null>(null);
 
-  const shorten = () => {
+  const shorten = async () => {
     if (url !== null) {
-      createShortLink(url);
+      setLoading(true);
+      const shortLink = await createShortLink(url);
+      setShortLink(shortLink);
+      setLoading(false);
     }
   }
 
   const updateUrl = (event: React.FormEvent<HTMLInputElement>) => {
     setUrl(event.currentTarget.value);
   }
+
+  const labelText = !!shortLink ? 'Your New Shortened Url' : 'Your Long Url';
+
+  const formReady = shortLink === null && url !== null;
 
   return (
     <div>
@@ -26,17 +41,31 @@ export default function Home() {
 
       <main className="container mx-auto">
         <div className="w-11/12 md:w-8/12 lg:w-4/12 mx-auto mt-8 md:mt-16 lg:mt-36">
-          <h1 className="text-6xl text-center">LnK</h1>
+          <div className="flex flex-row items-center">
+            <div className="mr-2">
+              <Icon size="large" />
+            </div>
+            <h1 className="text-6xl text-center ml-2">LnK</h1>
+          </div>
           <h2 className="text-lg my-8">Got a long link? We&apos;ll take care of that.</h2>
 
-          <div className="w-full bg-gray-200 shadow-md p-8">
+          <div className="w-full bg-darkGray bg-opacity-20 shadow-md p-8 rounded-md">
             <form className="flex flex-col">
-              <label htmlFor="url-input">Your URL</label>
-              <input value={url ?? ''} onChange={updateUrl} name="url-input" id="url-input" type="text" />
+              <label htmlFor="url-input" className="py-3 text-darkPurple opacity-70">{labelText}</label>
+
+              <div className="h-20 flex items-center justify-center w-full flex-col">
+                <UrlInput url={url} updateUrl={updateUrl} hidden={!!(loading || shortLink)} />
+
+                <ShortLink hidden={!shortLink} content={shortLink} />
+
+                <div className="mx-auto">
+                  <LoadingIcon show={loading} />
+                </div>
+              </div>
 
               <div className="flex flex-row w-max mx-auto mt-8">
-                <button onClick={shorten} type="button" className="bg-purple mr-0.5 px-3 py-2 rounded-tl-md rounded-bl-md transform -skew-x-6 text-white">Shorten</button>
-                <button type="button" className="bg-violet ml-0.5 px-3 py-2 rounded-tr-md rounded-br-md transform -skew-x-6 text-white">&amp; Copy</button>
+                <ShortenButton disabled={!!(shortLink || loading || !url)} onClick={shorten} />
+                <CopyButton disabled={!!(loading || !url)} onClick={() => null} />
               </div>
             </form>
           </div>

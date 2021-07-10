@@ -2,8 +2,7 @@ function validateLongUrl(long_url: string): boolean {
   return true;
 }
 
-export async function createShortLink(long_url: string) {
-  console.log("i am here", long_url);
+export async function createShortLink(long_url: string): Promise<string> {
   if (!validateLongUrl(long_url)) {
     throw new Error("URL must have format http(s)://website.com");
   }
@@ -19,11 +18,15 @@ export async function createShortLink(long_url: string) {
       },
     });
 
-    console.log("got response", response);
+    const data = await response.json();
 
-    return response;
+    return formatShortLink(data.path_slug);
   } catch (err) {
     console.log("failed to get it", err);
-    return;
+    throw new Error('Error');
   }
+}
+
+function formatShortLink(path: string) {
+  return process.env.NODE_ENV === 'production' ? `https://lnk.com/${path}` : `http://localhost:8080/${path}`;
 }
