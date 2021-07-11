@@ -1,0 +1,25 @@
+name: LnK Frontend CI
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - reopened
+      - synchronize
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install deps
+        run: yarn
+        working-directory: ./lnk-app
+      - name: Run tests
+        run: yarn test
+        working-directory: ./lnk-app
