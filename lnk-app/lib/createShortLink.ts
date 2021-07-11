@@ -1,10 +1,10 @@
 function validateLongUrl(long_url: string): boolean {
-  return true;
+  return !!long_url.match(/http[s]{0,1}:\/\/.*\..+/);
 }
 
 export async function createShortLink(long_url: string): Promise<string> {
   if (!validateLongUrl(long_url)) {
-    throw new Error("URL must have format http(s)://website.com");
+    throw new Error("URL must have format http(s)://site.com");
   }
 
   const response = await fetch("http://localhost:4000/api/urls", {
@@ -19,8 +19,8 @@ export async function createShortLink(long_url: string): Promise<string> {
 
   const data = await response.json();
 
-  if (response.status === 409) {
-    throw new Error("URL has already been shortened");
+  if ([400, 409].includes(response.status)) {
+    throw new Error(data.message);
   }
 
   if (response.status !== 201) {

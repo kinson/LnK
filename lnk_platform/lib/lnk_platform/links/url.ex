@@ -15,6 +15,8 @@ defmodule LnkPlatform.Links.Url do
     |> cast(attrs, [:long_url, :path_slug])
     |> unique_constraint(:long_url)
     |> unique_constraint(:path_slug)
+    |> validate_length(:long_url, [min: 10, max: 500])
+    |> validate_format(:long_url, ~r/http[s]{0,1}:\/\/.*\..+/)
     |> validate_required([:long_url, :path_slug])
   end
 end

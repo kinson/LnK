@@ -3,11 +3,11 @@ export async function getLongUrl(path: string) {
     const response = await fetch(url);
 
     if (response.status === 404) {
-        throw new Error('Could not find URL for path');
+        throw new Error("Could not find URL for path");
     }
 
     if (response.status !== 200) {
-        throw new Error('Failed to fetch URL');
+        throw new Error("Failed to fetch URL");
     }
 
     const data = await response.json();
