@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { ReactElement } from 'react';
 import { getLongUrl } from '../lib/getLongUrl';
-import HomeScreen from '../screen/Home';
+import HomeScreen from '../screens/Home';
 
 interface Props {
   redirectError?: boolean;
