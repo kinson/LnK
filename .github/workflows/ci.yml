@@ -13,12 +13,8 @@ on:
       - main
 
 jobs:
-  test-backend:
+  backend-tests:
     name: LnK Backend Tests
-    strategy:
-      matrix:
-        elixir: ["1.12"]
-        otp: [24]
     env:
       MIX_ENV: test
     runs-on: ubuntu-latest
@@ -40,8 +36,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: erlef/setup-beam@v1
         with:
-          otp-version: ${{matrix.otp}}
-          elixir-version: ${{matrix.elixir}}
+          otp-version: 24
+          elixir-version: "1.12"
       - name: Install deps
         run: mix deps.get
         working-directory: ./lnk_platform
@@ -49,7 +45,25 @@ jobs:
         run: mix test
         working-directory: ./lnk_platform
 
-  test-frontend:
+  backend-format-check:
+    name: LnK Backend Format Check
+    env:
+      MIX_ENV: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: 24
+          elixir-version: "1.12"
+      - name: Install deps
+        run: mix deps.get
+        working-directory: ./lnk_platform
+      - name: Run format check
+        run: mix format --check-formatted
+        working-directory: ./lnk_platform
+
+  frontend-tests:
     name: LnK Frontend Tests
     runs-on: ubuntu-latest
     steps:
@@ -59,4 +73,19 @@ jobs:
         working-directory: ./lnk-app
       - name: Run tests
         run: yarn test
+        working-directory: ./lnk-app
+
+  frontend-format-check:
+    name: LnK Format Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install deps
+        run: yarn
+        working-directory: ./lnk-app
+      - name: Lint
+        run: yarn lint
+        working-directory: ./lnk-app
+      - name: Typescript
+        run: yarn tsc
         working-directory: ./lnk-app

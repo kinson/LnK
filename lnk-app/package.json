@@ -6,8 +6,9 @@
     "dev": "next dev -p 8080",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "test": "jest --env=jsdom"
+    "lint": "eslint components screens lib contexts pages",
+    "test": "jest --env=jsdom",
+    "tsc": "tsc"
   },
   "dependencies": {
     "next": "11.0.1",

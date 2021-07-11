@@ -28,7 +28,8 @@ export default function DarkModeToggle(): ReactElement {
   return (
     <ThemeContext.Consumer>
       {(value) => (
-        <div
+        <button
+          type="button"
           id="dark-mode-toggle-container"
           onClick={toggleDarkMode(value)}
           className="ml-auto mr-2 flex items-center cursor-pointer"
@@ -141,7 +142,7 @@ export default function DarkModeToggle(): ReactElement {
               )}
             </div>
           </div>
-        </div>
+        </button>
       )}
     </ThemeContext.Consumer>
   );
