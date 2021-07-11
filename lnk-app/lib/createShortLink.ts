@@ -7,26 +7,31 @@ export async function createShortLink(long_url: string): Promise<string> {
     throw new Error("URL must have format http(s)://website.com");
   }
 
-  try {
-    const response = await fetch("http://localhost:4000/api/urls", {
-      method: "POST",
-      body: JSON.stringify({
-        long_url,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+  const response = await fetch("http://localhost:4000/api/urls", {
+    method: "POST",
+    body: JSON.stringify({
+      long_url,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 
-    const data = await response.json();
+  const data = await response.json();
 
-    return formatShortLink(data.path_slug);
-  } catch (err) {
-    console.log("failed to get it", err);
-    throw new Error('Error');
+  if (response.status === 409) {
+    throw new Error("URL has already been shortened");
   }
+
+  if (response.status !== 201) {
+    throw new Error("Could not shorten URL");
+  }
+
+  return formatShortLink(data.path_slug);
 }
 
 function formatShortLink(path: string) {
-  return process.env.NODE_ENV === 'production' ? `https://lnk.com/${path}` : `http://localhost:8080/${path}`;
+  return process.env.NODE_ENV === "production"
+    ? `https://lnk.com/${path}`
+    : `http://localhost:8080/${path}`;
 }

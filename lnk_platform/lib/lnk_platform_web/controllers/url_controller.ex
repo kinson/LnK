@@ -2,9 +2,13 @@ defmodule LnkPlatformWeb.UrlController do
   use LnkPlatformWeb, :controller
 
   def show(conn, %{"slug" => slug}) do
-    conn
-    |> put_status(200)
-    |> text("Hello there")
+    case LnkPlatform.Links.get_url_by_slug(slug) do
+      nil ->
+        put_status(conn, 404) |> render(:show, error: :not_found)
+
+      link ->
+        put_status(conn, 200) |> render(:show, link: link)
+    end
   end
 
   def show(conn, _params) do

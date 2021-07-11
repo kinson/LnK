@@ -14,4 +14,12 @@ defmodule LnkPlatformWeb.UrlView do
   def render("error.json", %{error: :server}) do
     %{message: "Failed to shorten URL"}
   end
+
+  def render("show.json", %{link: link}) do
+    Map.take(link, @url_response_keys)
+  end
+
+  def render("show.json", %{error: :not_found}) do
+    %{message: "Could not find url"}
+  end
 end
