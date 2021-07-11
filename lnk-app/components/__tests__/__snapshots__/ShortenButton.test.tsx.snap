@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShortenButton component tests should render the ShortenButton component when it is disabled 1`] = `
+<button
+  className="bg-purple mr-0.5 px-3 py-2 rounded-tl-md rounded-bl-md text-white bg-opacity-60 text-opacity-70"
+  disabled={true}
+  onClick={[MockFunction]}
+  type="button"
+>
+  Shorten
+</button>
+`;
+
+exports[`ShortenButton component tests should render the ShortenButton component when it not disabled 1`] = `
+<button
+  className="bg-purple mr-0.5 px-3 py-2 rounded-tl-md rounded-bl-md text-white"
+  disabled={false}
+  onClick={[MockFunction]}
+  type="button"
+>
+  Shorten
+</button>
+`;

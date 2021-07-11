@@ -7,7 +7,7 @@ use Mix.Config
 # Run `mix help test` for more information.
 config :lnk_platform, LnkPlatform.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "password",
   database: "lnk_platform_test#{System.get_env("MIX_TEST_PARTITION")}",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

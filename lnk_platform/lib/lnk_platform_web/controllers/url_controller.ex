@@ -14,7 +14,7 @@ defmodule LnkPlatformWeb.UrlController do
   def show(conn, _params) do
     conn
     |> put_status(400)
-    |> text("Bad request")
+    |> render(:show, error: :bad_request)
   end
 
   def create(conn, %{"long_url" => long_url}) do

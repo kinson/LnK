@@ -1,10 +1,12 @@
+import React, { ReactElement } from 'react';
+
 type IconSize = 'small' | 'medium' | 'large';
 
 interface Props {
   size: IconSize;
 }
 
-export default function Icon({ size }: Props) {
+export default function Icon({ size }: Props): ReactElement {
   const sizes = {
     small: 'max-h-8',
     medium: 'max-h-12',

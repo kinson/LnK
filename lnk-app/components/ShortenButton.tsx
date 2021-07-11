@@ -1,9 +1,14 @@
+import React, { ReactElement } from 'react';
+
 interface Props {
   disabled: boolean;
   onClick: () => void;
 }
 
-export default function ShortenButton({ disabled, onClick }: Props) {
+export default function ShortenButton({
+  disabled,
+  onClick,
+}: Props): ReactElement {
   const baseStyle =
     'bg-purple mr-0.5 px-3 py-2 rounded-tl-md rounded-bl-md text-white';
 

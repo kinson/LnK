@@ -1,10 +1,11 @@
+import React, { ReactElement } from 'react';
 import Icon from './Icon';
 
 interface Props {
   show: boolean;
 }
 
-export default function LoadingIcon({ show }: Props) {
+export default function LoadingIcon({ show }: Props): ReactElement {
   const baseStyle =
     'rounded-full w-14 bg-purple flex items-center justify-center transition-opacity duration-300 delay-75';
 

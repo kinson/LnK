@@ -34,4 +34,8 @@ defmodule LnkPlatformWeb.UrlView do
   def render("show.json", %{error: :not_found}) do
     %{message: "Could not find url"}
   end
+
+  def render("show.json", %{error: :bad_request}) do
+    %{message: "Bad request"}
+  end
 end

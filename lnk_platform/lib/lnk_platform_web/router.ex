@@ -8,7 +8,7 @@ defmodule LnkPlatformWeb.Router do
   scope "/api", LnkPlatformWeb do
     pipe_through :api
 
-    resources "/urls", UrlController, only: [:index, :show, :create]
+    resources "/urls", UrlController, only: [:create]
     get "/urls/path/:slug", UrlController, :show
   end
 end

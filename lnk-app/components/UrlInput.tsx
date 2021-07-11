@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 interface Props {
   hidden: boolean;
   url: string | null;
-  updateUrl: (_event: React.FormEvent<HTMLInputElement>) => void;
+  updateUrl: (res: React.FormEvent<HTMLInputElement>) => void;
 }
 
-export default function UrlInput({ hidden, url, updateUrl }: Props) {
+export default function UrlInput({
+  hidden,
+  url,
+  updateUrl,
+}: Props): ReactElement {
   const baseStyle =
     'placeholder-gray-300 text-darkPurple dark:text-white text-md relative bg-white dark:bg-gray-600 rounded border-0 shadow outline-none focus:outline-none w-full transition-opacity duration-300';
 

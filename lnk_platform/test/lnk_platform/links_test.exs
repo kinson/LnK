@@ -6,61 +6,35 @@ defmodule LnkPlatform.LinksTest do
   describe "urls" do
     alias LnkPlatform.Links.Url
 
-    @valid_attrs %{long_url: "some long_url", short_path: "some short_path"}
-    @update_attrs %{long_url: "some updated long_url", short_path: "some updated short_path"}
-    @invalid_attrs %{long_url: nil, short_path: nil}
+    @valid_long_url "http://google.com/longurkl"
+    @invalid_long_url "http://google."
+    @valid_attrs %{long_url: @valid_long_url, path_slug: "ABCDEF"}
 
-    def url_fixture(attrs \\ %{}) do
+    def url_fixture() do
       {:ok, url} =
-        attrs
-        |> Enum.into(@valid_attrs)
-        |> Links.create_url()
+        Url.changeset(%Url{}, @valid_attrs)
+        |> LnkPlatform.Repo.insert()
 
       url
     end
 
-    test "list_urls/0 returns all urls" do
-      url = url_fixture()
-      assert Links.list_urls() == [url]
+    test "create_url/1 with valid long_url creates a url" do
+      assert {:ok, %Url{} = url} = Links.create_url(@valid_long_url)
+      assert url.long_url == @valid_long_url
     end
 
-    test "get_url!/1 returns the url with given id" do
-      url = url_fixture()
-      assert Links.get_url!(url.id) == url
+    test "create_url/1 with invalid long_url returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Links.create_url(@invalid_long_url)
     end
 
-    test "create_url/1 with valid data creates a url" do
-      assert {:ok, %Url{} = url} = Links.create_url(@valid_attrs)
-      assert url.long_url == "some long_url"
-      assert url.short_path == "some short_path"
+    test "get_url_by_slug/1 returns url data when path_slug is found" do
+      url_fixture()
+      assert %Url{} = Links.get_url_by_slug("ABCDEF")
     end
 
-    test "create_url/1 with invalid data returns error changeset" do
-      assert {:error, %Ecto.Changeset{}} = Links.create_url(@invalid_attrs)
-    end
-
-    test "update_url/2 with valid data updates the url" do
-      url = url_fixture()
-      assert {:ok, %Url{} = url} = Links.update_url(url, @update_attrs)
-      assert url.long_url == "some updated long_url"
-      assert url.short_path == "some updated short_path"
-    end
-
-    test "update_url/2 with invalid data returns error changeset" do
-      url = url_fixture()
-      assert {:error, %Ecto.Changeset{}} = Links.update_url(url, @invalid_attrs)
-      assert url == Links.get_url!(url.id)
-    end
-
-    test "delete_url/1 deletes the url" do
-      url = url_fixture()
-      assert {:ok, %Url{}} = Links.delete_url(url)
-      assert_raise Ecto.NoResultsError, fn -> Links.get_url!(url.id) end
-    end
-
-    test "change_url/1 returns a url changeset" do
-      url = url_fixture()
-      assert %Ecto.Changeset{} = Links.change_url(url)
+    test "get_url_by_slug/1 returns nil when path_slug is not found" do
+      url_fixture()
+      assert is_nil(Links.get_url_by_slug("AAAAA"))
     end
   end
 end

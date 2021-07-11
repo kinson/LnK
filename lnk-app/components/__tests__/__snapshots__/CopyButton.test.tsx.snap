@@ -21,14 +21,3 @@ exports[`CopyButton component tests should render the CopyButton component when 
   & Copy
 </button>
 `;
-
-exports[`CopyButton component tests should render the CopyButton component with a message 1`] = `
-<button
-  className="bg-violet ml-0.5 px-3 py-2 rounded-tr-md rounded-br-md text-white"
-  disabled={false}
-  onClick={[MockFunction]}
-  type="button"
->
-  & Copy
-</button>
-`;

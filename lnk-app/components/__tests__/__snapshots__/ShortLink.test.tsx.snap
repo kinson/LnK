@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShortLink component tests should hide the ShortLink component when it is hidden 1`] = `
+<a
+  className="text-violet dark:text-lavender text-md relative bg-white dark:bg-gray-600 xrounded border-0 shadow outline-none focus:outline-none w-full transition-opacity duration-300 h-0 p-0 opacity-0"
+  href="#"
+/>
+`;
+
+exports[`ShortLink component tests should render the ShortLink component when it is not hidden 1`] = `
+<a
+  className="text-violet dark:text-lavender text-md relative bg-white dark:bg-gray-600 xrounded border-0 shadow outline-none focus:outline-none w-full transition-opacity duration-300 p-3 opacity-1"
+  href="https://google.com"
+>
+  https://google.com
+</a>
+`;

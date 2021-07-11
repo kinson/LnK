@@ -1,7 +1,7 @@
-import { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, ReactElement } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 
-export default function DarkModeToggle() {
+export default function DarkModeToggle(): ReactElement {
   const sunRef = useRef(null);
   const moonRef = useRef(null);
   const inputRef = useRef(null);
@@ -9,11 +9,7 @@ export default function DarkModeToggle() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    if (
-      localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
+    if (localStorage.theme === 'dark') {
       setDarkMode(true);
     } else {
       setDarkMode(false);
@@ -33,6 +29,7 @@ export default function DarkModeToggle() {
     <ThemeContext.Consumer>
       {(value) => (
         <div
+          id="dark-mode-toggle-container"
           onClick={toggleDarkMode(value)}
           className="ml-auto mr-2 flex items-center cursor-pointer"
         >

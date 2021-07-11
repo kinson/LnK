@@ -1,0 +1,396 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home screen tests should display an error message when the long url cannot be found 1`] = `
+<div>
+  <div
+    className=""
+  >
+    <main
+      className="w-full mx-auto h-screen transition-colors dark:bg-gray-700 false"
+    >
+      <div
+        className="w-11/12 md:w-8/12 lg:w-5/12 mx-auto pt-8 md:pt-16 lg:pt-36"
+      >
+        <p
+          className="my-8 rounded-md bg-red-200 border-2 border-red-400 text-red-700 p-4"
+        >
+          Could not find the link you are looking for.
+        </p>
+        <div
+          className="flex flex-row items-center"
+        >
+          <div
+            className="mr-2 dark:text-white"
+          >
+            <svg
+              className="max-h-16"
+              version="1.1"
+              viewBox="0 0 202 211"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            >
+              <g
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="8"
+                transform="translate(6.000000, 6.000000)"
+              >
+                <path
+                  d="M44.1456633,53.6451202 L44.0114514,48.4191476 C43.8554831,42.3460178 48.6522902,37.2963361 54.72542,37.1403677 C54.8195359,37.1379507 54.9136788,37.136742 55.0078257,37.136742 L174.7217,37.136742 C180.796832,37.136742 185.7217,42.0616098 185.7217,48.136742 L185.7217,90.136742 C185.7217,96.2118743 180.796832,101.136742 174.7217,101.136742 L54.4928782,101.136742 C48.507847,101.136742 43.6211034,96.3516523 43.4953082,90.3679432 L43.0445969,68.9289161 L43.0445969,68.9289161"
+                  id="Rectangle"
+                  transform="translate(114.383148, 69.136742) rotate(-38.000000) translate(-114.383148, -69.136742) "
+                />
+                <path
+                  d="M5.1400357,113.858202 L5.07884581,108.966168 C5.0028636,102.891511 9.86575039,97.9054323 15.9404075,97.8294501 C15.9862645,97.8288765 16.0321248,97.8285897 16.0779854,97.8285897 L135.939536,97.8285897 C142.014668,97.8285897 146.939536,102.753457 146.939536,108.82859 L146.939536,127.579032 L146.939536,127.579032 L146.939536,150.82859 C146.939536,156.903722 142.014668,161.82859 135.939536,161.82859 L15.829257,161.82859 C9.79736303,161.82859 4.89059053,156.971009 4.82981533,150.939422 L4.61559465,129.679257 L4.61559465,129.679257"
+                  id="Rectangle"
+                  transform="translate(75.777565, 129.828590) rotate(142.000000) translate(-75.777565, -129.828590) "
+                />
+              </g>
+            </svg>
+          </div>
+          <h1
+            className="text-6xl text-center dark:text-white ml-2"
+          >
+            LnK
+          </h1>
+          <div
+            className="ml-auto mr-2 flex items-center cursor-pointer"
+            id="dark-mode-toggle-container"
+            onClick={[Function]}
+          >
+            <div
+              className="relative"
+            >
+              <input
+                aria-label="Dark Mode Toggle"
+                className="sr-only"
+                defaultChecked={false}
+                id="dark-mode-toggle"
+                type="checkbox"
+              />
+              <div
+                className="block bg-gray-600 w-14 h-8 rounded-full"
+              />
+              <div
+                className="transform translate-x-full absolute left-1 top-1 bg-white dark:bg-purple w-6 h-6 rounded-full flex items-center justify-center transition-all"
+              >
+                <svg
+                  className="h-4 ml-1 text-white"
+                  fill="currentColor"
+                  id="moon-icon"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  version="1.1"
+                  viewBox="0 0 97 158"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18,0.5 C39.6771764,0.5 59.3021764,9.28641179 73.5078823,23.4921177 C87.7135882,37.6978236 96.5,57.3228236 96.5,79 C96.5,100.677176 87.7135882,120.302176 73.5078823,134.507882 C59.3021764,148.713588 39.6771764,157.5 18,157.5 C12.5891637,157.5 7.30617797,156.952622 2.20396947,155.909667 C19.0949556,151.484612 33.7935641,141.64268 44.331072,128.351675 C55.0804392,114.793451 61.5,97.6464258 61.5,79 C61.5,60.3535766 55.0804409,43.2065533 44.3310574,29.6483015 C33.7928623,16.3564226 19.093019,6.51402742 2.20435475,2.0894815 C7.30689791,1.047303 12.5895324,0.5 18,0.5 Z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2
+          className="text-lg dark:text-white my-8"
+        >
+          Got a long link? We'll take care of that.
+        </h2>
+        <div
+          className="w-full bg-darkGray bg-opacity-20 shadow-md p-8 rounded-md"
+        >
+          <form
+            className="flex flex-col"
+          >
+            <div
+              className="py-1 flex items-center justify-between"
+            >
+              <label
+                className="text-darkPurple dark:text-gray-200 opacity-70"
+                htmlFor="url-input"
+              >
+                Your Long Url
+              </label>
+              <p
+                className="text-red-600"
+              >
+                
+              </p>
+            </div>
+            <div
+              className="h-20 flex items-center justify-center w-full flex-col"
+            >
+              <input
+                className="placeholder-gray-300 text-darkPurple dark:text-white text-md relative bg-white dark:bg-gray-600 rounded border-0 shadow outline-none focus:outline-none w-full transition-opacity duration-300 p-3"
+                id="url-input"
+                name="url-input"
+                onChange={[Function]}
+                placeholder="https://google.com/?q=A+Long+Query+You+Want+To+Share+With..."
+                type="text"
+                value=""
+              />
+              <a
+                className="text-violet dark:text-lavender text-md relative bg-white dark:bg-gray-600 xrounded border-0 shadow outline-none focus:outline-none w-full transition-opacity duration-300 h-0 p-0 opacity-0"
+                href="#"
+              />
+              <div
+                className="mx-auto"
+              >
+                <div
+                  className="rounded-full w-14 bg-purple flex items-center justify-center transition-opacity duration-300 delay-75 opacity-0 h-0"
+                >
+                  <div
+                    className="animate-pulse text-white"
+                  >
+                    <svg
+                      className="max-h-8"
+                      version="1.1"
+                      viewBox="0 0 202 211"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="8"
+                        transform="translate(6.000000, 6.000000)"
+                      >
+                        <path
+                          d="M44.1456633,53.6451202 L44.0114514,48.4191476 C43.8554831,42.3460178 48.6522902,37.2963361 54.72542,37.1403677 C54.8195359,37.1379507 54.9136788,37.136742 55.0078257,37.136742 L174.7217,37.136742 C180.796832,37.136742 185.7217,42.0616098 185.7217,48.136742 L185.7217,90.136742 C185.7217,96.2118743 180.796832,101.136742 174.7217,101.136742 L54.4928782,101.136742 C48.507847,101.136742 43.6211034,96.3516523 43.4953082,90.3679432 L43.0445969,68.9289161 L43.0445969,68.9289161"
+                          id="Rectangle"
+                          transform="translate(114.383148, 69.136742) rotate(-38.000000) translate(-114.383148, -69.136742) "
+                        />
+                        <path
+                          d="M5.1400357,113.858202 L5.07884581,108.966168 C5.0028636,102.891511 9.86575039,97.9054323 15.9404075,97.8294501 C15.9862645,97.8288765 16.0321248,97.8285897 16.0779854,97.8285897 L135.939536,97.8285897 C142.014668,97.8285897 146.939536,102.753457 146.939536,108.82859 L146.939536,127.579032 L146.939536,127.579032 L146.939536,150.82859 C146.939536,156.903722 142.014668,161.82859 135.939536,161.82859 L15.829257,161.82859 C9.79736303,161.82859 4.89059053,156.971009 4.82981533,150.939422 L4.61559465,129.679257 L4.61559465,129.679257"
+                          id="Rectangle"
+                          transform="translate(75.777565, 129.828590) rotate(142.000000) translate(-75.777565, -129.828590) "
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="flex flex-row w-max mx-auto mt-8"
+            >
+              <button
+                className="bg-purple mr-0.5 px-3 py-2 rounded-tl-md rounded-bl-md text-white bg-opacity-60 text-opacity-70"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                Shorten
+              </button>
+              <button
+                className="bg-violet ml-0.5 px-3 py-2 rounded-tr-md rounded-br-md text-white bg-opacity-60 text-opacity-70"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                & Copy
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+`;
+
+exports[`Home screen tests should render the Home screen 1`] = `
+<div>
+  <div
+    className=""
+  >
+    <main
+      className="w-full mx-auto h-screen transition-colors dark:bg-gray-700 false"
+    >
+      <div
+        className="w-11/12 md:w-8/12 lg:w-5/12 mx-auto pt-8 md:pt-16 lg:pt-36"
+      >
+        <div
+          className="flex flex-row items-center"
+        >
+          <div
+            className="mr-2 dark:text-white"
+          >
+            <svg
+              className="max-h-16"
+              version="1.1"
+              viewBox="0 0 202 211"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            >
+              <g
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="8"
+                transform="translate(6.000000, 6.000000)"
+              >
+                <path
+                  d="M44.1456633,53.6451202 L44.0114514,48.4191476 C43.8554831,42.3460178 48.6522902,37.2963361 54.72542,37.1403677 C54.8195359,37.1379507 54.9136788,37.136742 55.0078257,37.136742 L174.7217,37.136742 C180.796832,37.136742 185.7217,42.0616098 185.7217,48.136742 L185.7217,90.136742 C185.7217,96.2118743 180.796832,101.136742 174.7217,101.136742 L54.4928782,101.136742 C48.507847,101.136742 43.6211034,96.3516523 43.4953082,90.3679432 L43.0445969,68.9289161 L43.0445969,68.9289161"
+                  id="Rectangle"
+                  transform="translate(114.383148, 69.136742) rotate(-38.000000) translate(-114.383148, -69.136742) "
+                />
+                <path
+                  d="M5.1400357,113.858202 L5.07884581,108.966168 C5.0028636,102.891511 9.86575039,97.9054323 15.9404075,97.8294501 C15.9862645,97.8288765 16.0321248,97.8285897 16.0779854,97.8285897 L135.939536,97.8285897 C142.014668,97.8285897 146.939536,102.753457 146.939536,108.82859 L146.939536,127.579032 L146.939536,127.579032 L146.939536,150.82859 C146.939536,156.903722 142.014668,161.82859 135.939536,161.82859 L15.829257,161.82859 C9.79736303,161.82859 4.89059053,156.971009 4.82981533,150.939422 L4.61559465,129.679257 L4.61559465,129.679257"
+                  id="Rectangle"
+                  transform="translate(75.777565, 129.828590) rotate(142.000000) translate(-75.777565, -129.828590) "
+                />
+              </g>
+            </svg>
+          </div>
+          <h1
+            className="text-6xl text-center dark:text-white ml-2"
+          >
+            LnK
+          </h1>
+          <div
+            className="ml-auto mr-2 flex items-center cursor-pointer"
+            id="dark-mode-toggle-container"
+            onClick={[Function]}
+          >
+            <div
+              className="relative"
+            >
+              <input
+                aria-label="Dark Mode Toggle"
+                className="sr-only"
+                defaultChecked={false}
+                id="dark-mode-toggle"
+                type="checkbox"
+              />
+              <div
+                className="block bg-gray-600 w-14 h-8 rounded-full"
+              />
+              <div
+                className="transform translate-x-full absolute left-1 top-1 bg-white dark:bg-purple w-6 h-6 rounded-full flex items-center justify-center transition-all"
+              >
+                <svg
+                  className="h-4 ml-1 text-white"
+                  fill="currentColor"
+                  id="moon-icon"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  version="1.1"
+                  viewBox="0 0 97 158"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18,0.5 C39.6771764,0.5 59.3021764,9.28641179 73.5078823,23.4921177 C87.7135882,37.6978236 96.5,57.3228236 96.5,79 C96.5,100.677176 87.7135882,120.302176 73.5078823,134.507882 C59.3021764,148.713588 39.6771764,157.5 18,157.5 C12.5891637,157.5 7.30617797,156.952622 2.20396947,155.909667 C19.0949556,151.484612 33.7935641,141.64268 44.331072,128.351675 C55.0804392,114.793451 61.5,97.6464258 61.5,79 C61.5,60.3535766 55.0804409,43.2065533 44.3310574,29.6483015 C33.7928623,16.3564226 19.093019,6.51402742 2.20435475,2.0894815 C7.30689791,1.047303 12.5895324,0.5 18,0.5 Z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2
+          className="text-lg dark:text-white my-8"
+        >
+          Got a long link? We'll take care of that.
+        </h2>
+        <div
+          className="w-full bg-darkGray bg-opacity-20 shadow-md p-8 rounded-md"
+        >
+          <form
+            className="flex flex-col"
+          >
+            <div
+              className="py-1 flex items-center justify-between"
+            >
+              <label
+                className="text-darkPurple dark:text-gray-200 opacity-70"
+                htmlFor="url-input"
+              >
+                Your Long Url
+              </label>
+              <p
+                className="text-red-600"
+              >
+                
+              </p>
+            </div>
+            <div
+              className="h-20 flex items-center justify-center w-full flex-col"
+            >
+              <input
+                className="placeholder-gray-300 text-darkPurple dark:text-white text-md relative bg-white dark:bg-gray-600 rounded border-0 shadow outline-none focus:outline-none w-full transition-opacity duration-300 p-3"
+                id="url-input"
+                name="url-input"
+                onChange={[Function]}
+                placeholder="https://google.com/?q=A+Long+Query+You+Want+To+Share+With..."
+                type="text"
+                value=""
+              />
+              <a
+                className="text-violet dark:text-lavender text-md relative bg-white dark:bg-gray-600 xrounded border-0 shadow outline-none focus:outline-none w-full transition-opacity duration-300 h-0 p-0 opacity-0"
+                href="#"
+              />
+              <div
+                className="mx-auto"
+              >
+                <div
+                  className="rounded-full w-14 bg-purple flex items-center justify-center transition-opacity duration-300 delay-75 opacity-0 h-0"
+                >
+                  <div
+                    className="animate-pulse text-white"
+                  >
+                    <svg
+                      className="max-h-8"
+                      version="1.1"
+                      viewBox="0 0 202 211"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="8"
+                        transform="translate(6.000000, 6.000000)"
+                      >
+                        <path
+                          d="M44.1456633,53.6451202 L44.0114514,48.4191476 C43.8554831,42.3460178 48.6522902,37.2963361 54.72542,37.1403677 C54.8195359,37.1379507 54.9136788,37.136742 55.0078257,37.136742 L174.7217,37.136742 C180.796832,37.136742 185.7217,42.0616098 185.7217,48.136742 L185.7217,90.136742 C185.7217,96.2118743 180.796832,101.136742 174.7217,101.136742 L54.4928782,101.136742 C48.507847,101.136742 43.6211034,96.3516523 43.4953082,90.3679432 L43.0445969,68.9289161 L43.0445969,68.9289161"
+                          id="Rectangle"
+                          transform="translate(114.383148, 69.136742) rotate(-38.000000) translate(-114.383148, -69.136742) "
+                        />
+                        <path
+                          d="M5.1400357,113.858202 L5.07884581,108.966168 C5.0028636,102.891511 9.86575039,97.9054323 15.9404075,97.8294501 C15.9862645,97.8288765 16.0321248,97.8285897 16.0779854,97.8285897 L135.939536,97.8285897 C142.014668,97.8285897 146.939536,102.753457 146.939536,108.82859 L146.939536,127.579032 L146.939536,127.579032 L146.939536,150.82859 C146.939536,156.903722 142.014668,161.82859 135.939536,161.82859 L15.829257,161.82859 C9.79736303,161.82859 4.89059053,156.971009 4.82981533,150.939422 L4.61559465,129.679257 L4.61559465,129.679257"
+                          id="Rectangle"
+                          transform="translate(75.777565, 129.828590) rotate(142.000000) translate(-75.777565, -129.828590) "
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="flex flex-row w-max mx-auto mt-8"
+            >
+              <button
+                className="bg-purple mr-0.5 px-3 py-2 rounded-tl-md rounded-bl-md text-white bg-opacity-60 text-opacity-70"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                Shorten
+              </button>
+              <button
+                className="bg-violet ml-0.5 px-3 py-2 rounded-tr-md rounded-br-md text-white bg-opacity-60 text-opacity-70"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                & Copy
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+`;
