@@ -1,0 +1,136 @@
+{
+	"id": "5dd8a62f-e282-447d-9173-c147819f27ac",
+	"name": "LnK",
+	"timestamp": "2021-07-12T05:20:40.860Z",
+	"collection_id": "9a6bd818-bf8c-4d70-9c03-8c29c345b6c5",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "20b0cb61-4fdb-4b34-953a-fcf6671288db",
+			"name": "Shorten A URL",
+			"time": 64,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				66,
+				77,
+				43,
+				48,
+				46,
+				43,
+				50,
+				76,
+				59,
+				42,
+				49,
+				48,
+				49,
+				54,
+				49,
+				51,
+				63,
+				61,
+				54,
+				64
+			],
+			"allTests": [
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{}
+			]
+		},
+		{
+			"id": "69392769-b2ce-4043-be20-a257506995af",
+			"name": "Fetch Long URL from Slug",
+			"time": 52,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				75,
+				41,
+				55,
+				49,
+				56,
+				54,
+				45,
+				38,
+				42,
+				41,
+				42,
+				42,
+				60,
+				47,
+				47,
+				76,
+				49,
+				56,
+				71,
+				52
+			],
+			"allTests": [
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{}
+			]
+		}
+	],
+	"count": 20,
+	"totalTime": 2130,
+	"collection": {
+		"requests": [
+			{
+				"id": "20b0cb61-4fdb-4b34-953a-fcf6671288db",
+				"method": "POST"
+			},
+			{
+				"id": "69392769-b2ce-4043-be20-a257506995af",
+				"method": "GET"
+			}
+		]
+	}
+}
