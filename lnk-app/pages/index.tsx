@@ -14,7 +14,7 @@ export default function Home(props: Props): ReactElement {
 
 Home.getInitialProps = async ({ query, res }: NextPageContext) => {
   if (!query.path) {
-    return {};
+    return { redirectError: false };
   }
 
   try {
