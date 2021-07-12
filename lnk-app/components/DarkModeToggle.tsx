@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState, ReactElement } from 'react';
-import { ThemeContext } from '../contexts/ThemeContext';
+import { ThemeContext, ThemeContextState } from '../contexts/ThemeContext';
 
 export default function DarkModeToggle(): ReactElement {
   const sunRef = useRef(null);
@@ -20,8 +20,8 @@ export default function DarkModeToggle(): ReactElement {
     localStorage.theme = darkMode ? 'dark' : 'light';
   }, [darkMode]);
 
-  const toggleDarkMode = (value) => () => {
-    value.toggleTheme(value);
+  const toggleDarkMode = (value: ThemeContextState) => () => {
+    value.toggleTheme();
     setDarkMode(!darkMode);
   };
 

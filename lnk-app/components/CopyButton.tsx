@@ -6,7 +6,7 @@ interface Props {
 }
 
 export default function ShortenButton({ link, disabled }: Props): ReactElement {
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const [copied, setCopied] = useState<boolean>(false);
 
   const buttonText = copied ? 'Copied!' : '& Copy';
@@ -19,13 +19,13 @@ export default function ShortenButton({ link, disabled }: Props): ReactElement {
     : baseStyle;
 
   const copyLinkToClipboard = () => {
-    if (inputRef.current !== null && link !== null) {
-      inputRef.current.focus();
-      inputRef.current.select();
+    if (inputRef.current === null || link === null) return;
 
-      if (document.execCommand('copy')) {
-        setCopied(true);
-      }
+    inputRef.current.focus();
+    inputRef.current.select();
+
+    if (document.execCommand('copy')) {
+      setCopied(true);
     }
   };
 

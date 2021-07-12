@@ -28,7 +28,7 @@ defmodule LnkPlatformWeb.UrlController do
   end
 
   def create(conn, %{"long_url" => long_url}) do
-    case artificial_loading_time(long_url) do
+    case LnkPlatform.Links.create_url(long_url) do
       {:ok, link} ->
         put_status(conn, 201) |> render(:create, link: link)
 
@@ -58,15 +58,5 @@ defmodule LnkPlatformWeb.UrlController do
         IO.inspect(err)
         put_status(conn, 500) |> render(:error, error: :server)
     end
-  end
-
-  defp artificial_loading_time(long_url) do
-    sleep = Task.async(fn -> :timer.sleep(500) end)
-
-    ret = LnkPlatform.Links.create_url(long_url)
-
-    Task.await(sleep)
-
-    ret
   end
 end

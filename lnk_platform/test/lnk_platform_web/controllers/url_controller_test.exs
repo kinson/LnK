@@ -33,6 +33,22 @@ defmodule LnkPlatformWeb.UrlControllerTest do
       assert Map.has_key?(json_response(conn, 404), "message")
     end
 
+    test "show/2 should return 200 when it finds the url corresponding to a long_url", %{
+      conn: conn
+    } do
+      encoded = URI.encode_www_form(@valid_attrs.long_url)
+      conn = get(conn, "/api/urls/long_url/#{encoded}")
+      assert Map.has_key?(json_response(conn, 200), "path_slug")
+    end
+
+    test "show/2 should return 404 when it cannot find a url corresponding to a long_url", %{
+      conn: conn
+    } do
+      encoded = URI.encode_www_form("https://newurl.com/long")
+      conn = get(conn, "/api/urls/long_url/#{encoded}")
+      assert Map.has_key?(json_response(conn, 404), "message")
+    end
+
     test "create/2 should return 201 when it successfully creates a Url", %{conn: conn} do
       conn =
         post(conn, Routes.url_path(conn, :create), %{"long_url" => "https://newurl.com/long"})
