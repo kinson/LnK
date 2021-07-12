@@ -38,15 +38,15 @@ Full disclosure, I took these icons from a project I contributed them to previou
 
 ### Using Next.js
 
-I opted to use Next.js on the frontend because I have found it makes the spin up process for a new react app even easier than `create-react-app`.
+I opted to use Next.js on the frontend because I have found it makes the spin up process for a new react app even quicker (at least for me) than `create-react-app`.
 
 ### Using Typescript
 
-I have not used Typescript on the frontend before (aside from React Native), but I opted to for this project because it _feels_ like a safer choice than Javascript in general and it provided piece of mind while rapidly developing this website.
+I have not used Typescript on the frontend before (aside from React Native), but I opted to for this project because it _feels_ like a safer choice than JavaScript in general and it provided piece of mind while rapidly developing this website.
 
 ### Next Steps
-I am pleased with this application and I did not want to overengineer it at the risk of making it too time consuming to reason about, but some things I would add in the future and considered adding here:
+I did not want to overengineer this project at the risk of making it too time consuming to reason about, but some things I would add in the future are:
 * A caching mechanism on the backend (possibly using [this library](https://github.com/kinson/fiat)) to avoid a round trip to the database when querying a url
 * Continuous deployment to a free-tier service from a web hosting service
 * Better API response validation and typing using Typescript
-* A feature to let people choose custom short url paths
+* A feature to let people choose custom shortened URLs

@@ -10,7 +10,7 @@ export default function Icon({ size }: Props): ReactElement {
   const sizes = {
     small: 'max-h-8',
     medium: 'max-h-12',
-    large: 'max-h-16',
+    large: 'w-8 md:w-12 lg:w-14 h-auto',
   };
 
   return (

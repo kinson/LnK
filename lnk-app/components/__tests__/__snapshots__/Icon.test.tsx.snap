@@ -2,7 +2,7 @@
 
 exports[`Icon component tests should render the Icon component 1`] = `
 <svg
-  className="max-h-16"
+  className="w-8 md:w-12 lg:w-14 h-auto"
   version="1.1"
   viewBox="0 0 202 211"
   xmlns="http://www.w3.org/2000/svg"

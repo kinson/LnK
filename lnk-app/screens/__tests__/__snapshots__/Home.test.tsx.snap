@@ -20,10 +20,10 @@ exports[`Home screen tests should display an error message when the long url can
           className="flex flex-row items-center"
         >
           <div
-            className="mr-2 dark:text-white"
+            className="mr-2 dark:text-gray-200"
           >
             <svg
-              className="max-h-16"
+              className="w-8 md:w-12 lg:w-14 h-auto"
               version="1.1"
               viewBox="0 0 202 211"
               xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ exports[`Home screen tests should display an error message when the long url can
             </svg>
           </div>
           <h1
-            className="text-6xl text-center dark:text-white ml-2"
+            className="text-4xl md:text-5xl lg:text-6xl text-center dark:text-gray-200 ml-2"
           >
             LnK
           </h1>
@@ -159,9 +159,9 @@ exports[`Home screen tests should display an error message when the long url can
           </button>
         </div>
         <h2
-          className="text-lg dark:text-white my-8"
+          className="text-lg dark:text-gray-200 my-8"
         >
-          Got a long link? We'll take care of that.
+          Got a long link? Just paste it below and click shorten ✨
         </h2>
         <div
           className="w-full bg-darkGray bg-opacity-20 shadow-md p-8 rounded-md"
@@ -188,10 +188,11 @@ exports[`Home screen tests should display an error message when the long url can
               className="h-20 flex items-center justify-center w-full flex-col"
             >
               <input
-                className="placeholder-gray-300 text-darkPurple dark:text-white text-md relative bg-white dark:bg-gray-600 rounded border-0 shadow outline-none focus:outline-none w-full transition-opacity duration-300 p-3"
+                className="placeholder-gray-300 dark:placeholder-gray-500 text-darkPurple dark:text-white text-md relative bg-white dark:bg-gray-600 rounded border-0 shadow outline-none focus:outline-none w-full transition-opacity duration-300 p-3"
                 id="url-input"
                 name="url-input"
                 onChange={[Function]}
+                onKeyPress={[Function]}
                 placeholder="https://google.com/?q=A+Long+Query+You+Want+To+Share+With..."
                 type="text"
                 value=""
@@ -286,10 +287,10 @@ exports[`Home screen tests should render the Home screen 1`] = `
           className="flex flex-row items-center"
         >
           <div
-            className="mr-2 dark:text-white"
+            className="mr-2 dark:text-gray-200"
           >
             <svg
-              className="max-h-16"
+              className="w-8 md:w-12 lg:w-14 h-auto"
               version="1.1"
               viewBox="0 0 202 211"
               xmlns="http://www.w3.org/2000/svg"
@@ -315,7 +316,7 @@ exports[`Home screen tests should render the Home screen 1`] = `
             </svg>
           </div>
           <h1
-            className="text-6xl text-center dark:text-white ml-2"
+            className="text-4xl md:text-5xl lg:text-6xl text-center dark:text-gray-200 ml-2"
           >
             LnK
           </h1>
@@ -425,9 +426,9 @@ exports[`Home screen tests should render the Home screen 1`] = `
           </button>
         </div>
         <h2
-          className="text-lg dark:text-white my-8"
+          className="text-lg dark:text-gray-200 my-8"
         >
-          Got a long link? We'll take care of that.
+          Got a long link? Just paste it below and click shorten ✨
         </h2>
         <div
           className="w-full bg-darkGray bg-opacity-20 shadow-md p-8 rounded-md"
@@ -454,10 +455,11 @@ exports[`Home screen tests should render the Home screen 1`] = `
               className="h-20 flex items-center justify-center w-full flex-col"
             >
               <input
-                className="placeholder-gray-300 text-darkPurple dark:text-white text-md relative bg-white dark:bg-gray-600 rounded border-0 shadow outline-none focus:outline-none w-full transition-opacity duration-300 p-3"
+                className="placeholder-gray-300 dark:placeholder-gray-500 text-darkPurple dark:text-white text-md relative bg-white dark:bg-gray-600 rounded border-0 shadow outline-none focus:outline-none w-full transition-opacity duration-300 p-3"
                 id="url-input"
                 name="url-input"
                 onChange={[Function]}
+                onKeyPress={[Function]}
                 placeholder="https://google.com/?q=A+Long+Query+You+Want+To+Share+With..."
                 type="text"
                 value=""
