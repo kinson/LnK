@@ -3,7 +3,7 @@
 exports[`CopyButton component tests should render the CopyButton component when it is disabled 1`] = `
 Array [
   <button
-    className="bg-violet ml-0.5 px-3 py-2 rounded-tr-md rounded-br-md text-white bg-opacity-60 text-opacity-70"
+    className="bg-violet ml-0.5 px-3 py-2 rounded-tr-md rounded-br-md text-white dark:text-gray-200 bg-opacity-50 text-opacity-70 dark:bg-opacity-60 dark:text-opacity-40 cursor-not-allowed"
     disabled={true}
     onClick={[Function]}
     type="button"
@@ -21,7 +21,7 @@ Array [
 exports[`CopyButton component tests should render the CopyButton component when it is not disabled 1`] = `
 Array [
   <button
-    className="bg-violet ml-0.5 px-3 py-2 rounded-tr-md rounded-br-md text-white"
+    className="bg-violet ml-0.5 px-3 py-2 rounded-tr-md rounded-br-md text-white dark:text-gray-200"
     disabled={false}
     onClick={[Function]}
     type="button"

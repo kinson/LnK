@@ -6,7 +6,7 @@ exports[`Home screen tests should display an error message when the long url can
     className=""
   >
     <main
-      className="w-full mx-auto h-screen transition-colors dark:bg-gray-700 false"
+      className="w-full mx-auto h-screen transition-colors dark:bg-gray-700"
     >
       <div
         className="w-11/12 md:w-8/12 lg:w-5/12 mx-auto pt-8 md:pt-16 lg:pt-36"
@@ -242,7 +242,7 @@ exports[`Home screen tests should display an error message when the long url can
               className="flex flex-row w-max mx-auto mt-8"
             >
               <button
-                className="bg-purple mr-0.5 px-3 py-2 rounded-tl-md rounded-bl-md text-white bg-opacity-60 text-opacity-70"
+                className="bg-purple mr-0.5 px-3 py-2 rounded-tl-md rounded-bl-md text-white dark:text-gray-200 bg-opacity-50 text-opacity-70 dark:bg-opacity-60 dark:text-opacity-40 cursor-not-allowed"
                 disabled={true}
                 onClick={[Function]}
                 type="button"
@@ -250,7 +250,7 @@ exports[`Home screen tests should display an error message when the long url can
                 Shorten
               </button>
               <button
-                className="bg-violet ml-0.5 px-3 py-2 rounded-tr-md rounded-br-md text-white bg-opacity-60 text-opacity-70"
+                className="bg-violet ml-0.5 px-3 py-2 rounded-tr-md rounded-br-md text-white dark:text-gray-200 bg-opacity-50 text-opacity-70 dark:bg-opacity-60 dark:text-opacity-40 cursor-not-allowed"
                 disabled={true}
                 onClick={[Function]}
                 type="button"
@@ -277,7 +277,7 @@ exports[`Home screen tests should render the Home screen 1`] = `
     className=""
   >
     <main
-      className="w-full mx-auto h-screen transition-colors dark:bg-gray-700 false"
+      className="w-full mx-auto h-screen transition-colors dark:bg-gray-700"
     >
       <div
         className="w-11/12 md:w-8/12 lg:w-5/12 mx-auto pt-8 md:pt-16 lg:pt-36"
@@ -508,7 +508,7 @@ exports[`Home screen tests should render the Home screen 1`] = `
               className="flex flex-row w-max mx-auto mt-8"
             >
               <button
-                className="bg-purple mr-0.5 px-3 py-2 rounded-tl-md rounded-bl-md text-white bg-opacity-60 text-opacity-70"
+                className="bg-purple mr-0.5 px-3 py-2 rounded-tl-md rounded-bl-md text-white dark:text-gray-200 bg-opacity-50 text-opacity-70 dark:bg-opacity-60 dark:text-opacity-40 cursor-not-allowed"
                 disabled={true}
                 onClick={[Function]}
                 type="button"
@@ -516,7 +516,7 @@ exports[`Home screen tests should render the Home screen 1`] = `
                 Shorten
               </button>
               <button
-                className="bg-violet ml-0.5 px-3 py-2 rounded-tr-md rounded-br-md text-white bg-opacity-60 text-opacity-70"
+                className="bg-violet ml-0.5 px-3 py-2 rounded-tr-md rounded-br-md text-white dark:text-gray-200 bg-opacity-50 text-opacity-70 dark:bg-opacity-60 dark:text-opacity-40 cursor-not-allowed"
                 disabled={true}
                 onClick={[Function]}
                 type="button"

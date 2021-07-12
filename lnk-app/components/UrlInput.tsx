@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react';
 interface Props {
   hidden: boolean;
   url: string | null;
-  updateUrl: (res: React.FormEvent<HTMLInputElement>) => void;
+  updateUrl: (url: React.FormEvent<HTMLInputElement>) => void;
 }
 
 export default function UrlInput({

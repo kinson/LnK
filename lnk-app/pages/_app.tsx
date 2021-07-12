@@ -1,20 +1,26 @@
 /* eslint-disable react/jsx-props-no-spreading */
 // eslint-disable-next-line import/no-extraneous-dependencies
 import 'tailwindcss/tailwind.css';
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import type { AppProps } from 'next/app';
-import { ThemeContext } from '../contexts/ThemeContext';
+import { Theme, ThemeContext } from '../contexts/ThemeContext';
+import { useDeviceTheme } from '../hooks/useDeviceTheme';
 
 function MyApp({ Component, pageProps }: AppProps): ReactElement {
-  const [theme, setTheme] = useState('light');
+  const [darkMode, setDarkMode] = useState<boolean>(false);
+  useDeviceTheme(setDarkMode);
 
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    setDarkMode(!darkMode);
   };
+
+  useEffect(() => {
+    localStorage.theme = darkMode ? Theme.DARK : Theme.LIGHT;
+  }, [darkMode]);
 
   const contextValue = {
     toggleTheme,
-    theme,
+    theme: darkMode ? Theme.DARK : Theme.LIGHT,
   };
 
   return (

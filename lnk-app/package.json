@@ -6,7 +6,7 @@
     "dev": "next dev -p 8080",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint components screens lib contexts pages",
+    "lint": "eslint components screens lib contexts pages hooks",
     "test": "jest --env=jsdom",
     "tsc": "tsc"
   },

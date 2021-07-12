@@ -1,24 +1,10 @@
-import React, { useRef, useEffect, useState, ReactElement } from 'react';
+import React, { useState, ReactElement } from 'react';
 import { ThemeContext, ThemeContextState } from '../contexts/ThemeContext';
+import { useDeviceTheme } from '../hooks/useDeviceTheme';
 
 export default function DarkModeToggle(): ReactElement {
-  const sunRef = useRef(null);
-  const moonRef = useRef(null);
-  const inputRef = useRef(null);
-
   const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    if (localStorage.theme === 'dark') {
-      setDarkMode(true);
-    } else {
-      setDarkMode(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.theme = darkMode ? 'dark' : 'light';
-  }, [darkMode]);
+  useDeviceTheme(setDarkMode);
 
   const toggleDarkMode = (value: ThemeContextState) => () => {
     value.toggleTheme();
@@ -36,7 +22,6 @@ export default function DarkModeToggle(): ReactElement {
         >
           <div className="relative">
             <input
-              ref={inputRef}
               defaultChecked={darkMode}
               type="checkbox"
               id="dark-mode-toggle"
@@ -51,7 +36,6 @@ export default function DarkModeToggle(): ReactElement {
             >
               {darkMode ? (
                 <svg
-                  ref={moonRef}
                   id="moon-icon"
                   viewBox="0 0 97 158"
                   version="1.1"
@@ -65,7 +49,6 @@ export default function DarkModeToggle(): ReactElement {
                 </svg>
               ) : (
                 <svg
-                  ref={sunRef}
                   id="sun-icon"
                   viewBox="0 0 170 170"
                   version="1.1"

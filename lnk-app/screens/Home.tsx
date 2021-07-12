@@ -10,7 +10,7 @@ import ShortenButton from '../components/ShortenButton';
 import CopyButton from '../components/CopyButton';
 import Alert from '../components/Alert';
 import DarkModeToggle from '../components/DarkModeToggle';
-import { ThemeContext } from '../contexts/ThemeContext';
+import { Theme, ThemeContext } from '../contexts/ThemeContext';
 
 interface Props {
   redirectError?: boolean;
@@ -60,12 +60,8 @@ export default function HomeScreen({ redirectError }: Props): ReactElement {
 
       <ThemeContext.Consumer>
         {({ theme }) => (
-          <div className={theme === 'dark' ? 'dark' : ''}>
-            <main
-              className={`w-full mx-auto h-screen transition-colors dark:bg-gray-700 ${
-                theme === 'dark' && 'dark'
-              }`}
-            >
+          <div className={theme === Theme.DARK ? 'dark' : ''}>
+            <main className="w-full mx-auto h-screen transition-colors dark:bg-gray-700">
               <div className="w-11/12 md:w-8/12 lg:w-5/12 mx-auto pt-8 md:pt-16 lg:pt-36">
                 {redirectError && (
                   <Alert>Could not find the link you are looking for.</Alert>

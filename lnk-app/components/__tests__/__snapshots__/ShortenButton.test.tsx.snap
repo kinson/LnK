@@ -2,7 +2,7 @@
 
 exports[`ShortenButton component tests should render the ShortenButton component when it is disabled 1`] = `
 <button
-  className="bg-purple mr-0.5 px-3 py-2 rounded-tl-md rounded-bl-md text-white bg-opacity-60 text-opacity-70"
+  className="bg-purple mr-0.5 px-3 py-2 rounded-tl-md rounded-bl-md text-white dark:text-gray-200 bg-opacity-50 text-opacity-70 dark:bg-opacity-60 dark:text-opacity-40 cursor-not-allowed"
   disabled={true}
   onClick={[MockFunction]}
   type="button"
@@ -13,7 +13,7 @@ exports[`ShortenButton component tests should render the ShortenButton component
 
 exports[`ShortenButton component tests should render the ShortenButton component when it not disabled 1`] = `
 <button
-  className="bg-purple mr-0.5 px-3 py-2 rounded-tl-md rounded-bl-md text-white"
+  className="bg-purple mr-0.5 px-3 py-2 rounded-tl-md rounded-bl-md text-white dark:text-gray-200"
   disabled={false}
   onClick={[MockFunction]}
   type="button"
