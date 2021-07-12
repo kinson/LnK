@@ -1,4 +1,5 @@
-import { getLongUrl } from '../getLongUrl';
+import { formatShortLink } from '../formatShortUrl';
+import { getShortUrl } from '../getShortUrl';
 
 const fixture = {
   id: 1,
@@ -10,7 +11,7 @@ const fixture = {
 const fetchMock = jest.fn();
 (global.fetch as jest.Mock) = fetchMock;
 
-describe('getLongUrl() tests', () => {
+describe('getShortUrl() tests', () => {
   beforeEach(fetchMock.mockClear);
 
   it('should return the corresponding long url if it exists', async () => {
@@ -19,7 +20,9 @@ describe('getLongUrl() tests', () => {
       json: () => Promise.resolve(fixture),
     });
 
-    expect(await getLongUrl(fixture.path_slug)).toEqual(fixture.long_url);
+    expect(await getShortUrl(fixture.long_url)).toEqual(
+      formatShortLink(fixture.path_slug)
+    );
   });
 
   it('should throw an error if the long url cannot be found', async () => {
@@ -27,9 +30,9 @@ describe('getLongUrl() tests', () => {
       status: 404,
     });
 
-    await expect(getLongUrl(fixture.path_slug)).rejects.toHaveProperty(
+    await expect(getShortUrl(fixture.long_url)).rejects.toHaveProperty(
       'message',
-      'Could not find URL for path'
+      'Could not find short URL'
     );
   });
 
@@ -38,7 +41,7 @@ describe('getLongUrl() tests', () => {
       status: 500,
     });
 
-    await expect(getLongUrl(fixture.path_slug)).rejects.toHaveProperty(
+    await expect(getShortUrl(fixture.long_url)).rejects.toHaveProperty(
       'message',
       'Failed to fetch URL'
     );

@@ -11,6 +11,16 @@ defmodule LnkPlatformWeb.UrlController do
     end
   end
 
+  def show(conn, %{"long_url" => long_url}) do
+    case LnkPlatform.Links.get_slug_by_url(long_url) do
+      nil ->
+        put_status(conn, 404) |> render(:show, error: :not_found)
+
+      link ->
+        put_status(conn, 200) |> render(:show, link: link)
+    end
+  end
+
   def show(conn, _params) do
     conn
     |> put_status(400)

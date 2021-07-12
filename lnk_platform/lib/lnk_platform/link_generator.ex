@@ -11,11 +11,11 @@ defmodule LnkPlatform.LinkGenerator do
   ## Examples
 
       iex> generate_random_path(3)
-      a3
+      ADK
 
   """
+  @spec generate_random_path(Integer.t()) :: String.t()
   def generate_random_path(length \\ 6) do
     :crypto.strong_rand_bytes(length) |> Base.url_encode64() |> binary_part(0, length)
   end
-
 end

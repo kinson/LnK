@@ -1,11 +1,8 @@
+import { formatShortLink } from './formatShortUrl';
+import { getShortUrl } from './getShortUrl';
+
 function validateLongUrl(longUrl: string): boolean {
   return !!longUrl.match(/http[s]{0,1}:\/\/.*\..+/);
-}
-
-function formatShortLink(path: string) {
-  return process.env.NODE_ENV === 'production'
-    ? `https://lnk.com/${path}`
-    : `http://localhost:8080/${path}`;
 }
 
 export async function createShortLink(longUrl: string): Promise<string> {
@@ -25,7 +22,11 @@ export async function createShortLink(longUrl: string): Promise<string> {
 
   const data = await response.json();
 
-  if ([400, 409].includes(response.status)) {
+  if (response.status === 409) {
+    return getShortUrl(longUrl);
+  }
+
+  if (response.status === 400) {
     throw new Error(data.message);
   }
 

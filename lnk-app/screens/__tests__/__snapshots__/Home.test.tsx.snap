@@ -53,10 +53,11 @@ exports[`Home screen tests should display an error message when the long url can
           >
             LnK
           </h1>
-          <div
+          <button
             className="ml-auto mr-2 flex items-center cursor-pointer"
             id="dark-mode-toggle-container"
             onClick={[Function]}
+            type="button"
           >
             <div
               className="relative"
@@ -72,25 +73,90 @@ exports[`Home screen tests should display an error message when the long url can
                 className="block bg-gray-600 w-14 h-8 rounded-full"
               />
               <div
-                className="transform translate-x-full absolute left-1 top-1 bg-white dark:bg-purple w-6 h-6 rounded-full flex items-center justify-center transition-all"
+                className="false absolute left-1 top-1 bg-white dark:bg-purple w-6 h-6 rounded-full flex items-center justify-center transition-all"
               >
                 <svg
-                  className="h-4 ml-1 text-white"
+                  className="h-4 text-black"
                   fill="currentColor"
-                  id="moon-icon"
+                  id="sun-icon"
                   stroke="currentColor"
-                  strokeWidth="2"
                   version="1.1"
-                  viewBox="0 0 97 158"
+                  viewBox="0 0 170 170"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M18,0.5 C39.6771764,0.5 59.3021764,9.28641179 73.5078823,23.4921177 C87.7135882,37.6978236 96.5,57.3228236 96.5,79 C96.5,100.677176 87.7135882,120.302176 73.5078823,134.507882 C59.3021764,148.713588 39.6771764,157.5 18,157.5 C12.5891637,157.5 7.30617797,156.952622 2.20396947,155.909667 C19.0949556,151.484612 33.7935641,141.64268 44.331072,128.351675 C55.0804392,114.793451 61.5,97.6464258 61.5,79 C61.5,60.3535766 55.0804409,43.2065533 44.3310574,29.6483015 C33.7928623,16.3564226 19.093019,6.51402742 2.20435475,2.0894815 C7.30689791,1.047303 12.5895324,0.5 18,0.5 Z"
-                  />
+                  <g
+                    id="Group-2"
+                    transform="translate(80.000000, 79.000000) rotate(-4.000000) translate(-80.000000, -79.000000) translate(1.000000, -0.000000)"
+                  >
+                    <circle
+                      cx="79"
+                      cy="79"
+                      id="Oval"
+                      r="22.5"
+                    />
+                    <g
+                      id="Group"
+                      stroke="currentColor"
+                      strokeLinecap="square"
+                      strokeWidth="5"
+                    >
+                      <line
+                        x1="111.085701"
+                        x2="139.247251"
+                        y1="51.5309469"
+                        y2="27.5243795"
+                      />
+                      <line
+                        x1="121.11157"
+                        x2="158"
+                        y1="82.2644628"
+                        y2="85.2024793"
+                      />
+                      <line
+                        transform="translate(118.472337, 125.166476) rotate(90.000000) translate(-118.472337, -125.166476) "
+                        x1="104.160729"
+                        x2="132.783944"
+                        y1="137.400592"
+                        y2="112.93236"
+                      />
+                      <line
+                        x1="75.7355372"
+                        x2="72.7975207"
+                        y1="121.11157"
+                        y2="158"
+                      />
+                      <line
+                        transform="translate(32.833524, 118.472337) rotate(180.000000) translate(-32.833524, -118.472337) "
+                        x1="18.7527491"
+                        x2="46.9142993"
+                        y1="130.475621"
+                        y2="106.469053"
+                      />
+                      <line
+                        x1="36.8884298"
+                        x2="0"
+                        y1="75.7355372"
+                        y2="72.7975207"
+                      />
+                      <line
+                        transform="translate(39.527663, 32.833524) rotate(270.000000) translate(-39.527663, -32.833524) "
+                        x1="25.2160557"
+                        x2="53.8392707"
+                        y1="45.0676403"
+                        y2="20.5994081"
+                      />
+                      <line
+                        x1="82.2644628"
+                        x2="85.2024793"
+                        y1="36.8884298"
+                        y2="0"
+                      />
+                    </g>
+                  </g>
                 </svg>
               </div>
             </div>
-          </div>
+          </button>
         </div>
         <h2
           className="text-lg dark:text-white my-8"
@@ -191,6 +257,11 @@ exports[`Home screen tests should display an error message when the long url can
               >
                 & Copy
               </button>
+              <input
+                className="h-0 w-0 focus:outline-none"
+                readOnly={true}
+                value=""
+              />
             </div>
           </form>
         </div>
@@ -248,10 +319,11 @@ exports[`Home screen tests should render the Home screen 1`] = `
           >
             LnK
           </h1>
-          <div
+          <button
             className="ml-auto mr-2 flex items-center cursor-pointer"
             id="dark-mode-toggle-container"
             onClick={[Function]}
+            type="button"
           >
             <div
               className="relative"
@@ -267,25 +339,90 @@ exports[`Home screen tests should render the Home screen 1`] = `
                 className="block bg-gray-600 w-14 h-8 rounded-full"
               />
               <div
-                className="transform translate-x-full absolute left-1 top-1 bg-white dark:bg-purple w-6 h-6 rounded-full flex items-center justify-center transition-all"
+                className="false absolute left-1 top-1 bg-white dark:bg-purple w-6 h-6 rounded-full flex items-center justify-center transition-all"
               >
                 <svg
-                  className="h-4 ml-1 text-white"
+                  className="h-4 text-black"
                   fill="currentColor"
-                  id="moon-icon"
+                  id="sun-icon"
                   stroke="currentColor"
-                  strokeWidth="2"
                   version="1.1"
-                  viewBox="0 0 97 158"
+                  viewBox="0 0 170 170"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M18,0.5 C39.6771764,0.5 59.3021764,9.28641179 73.5078823,23.4921177 C87.7135882,37.6978236 96.5,57.3228236 96.5,79 C96.5,100.677176 87.7135882,120.302176 73.5078823,134.507882 C59.3021764,148.713588 39.6771764,157.5 18,157.5 C12.5891637,157.5 7.30617797,156.952622 2.20396947,155.909667 C19.0949556,151.484612 33.7935641,141.64268 44.331072,128.351675 C55.0804392,114.793451 61.5,97.6464258 61.5,79 C61.5,60.3535766 55.0804409,43.2065533 44.3310574,29.6483015 C33.7928623,16.3564226 19.093019,6.51402742 2.20435475,2.0894815 C7.30689791,1.047303 12.5895324,0.5 18,0.5 Z"
-                  />
+                  <g
+                    id="Group-2"
+                    transform="translate(80.000000, 79.000000) rotate(-4.000000) translate(-80.000000, -79.000000) translate(1.000000, -0.000000)"
+                  >
+                    <circle
+                      cx="79"
+                      cy="79"
+                      id="Oval"
+                      r="22.5"
+                    />
+                    <g
+                      id="Group"
+                      stroke="currentColor"
+                      strokeLinecap="square"
+                      strokeWidth="5"
+                    >
+                      <line
+                        x1="111.085701"
+                        x2="139.247251"
+                        y1="51.5309469"
+                        y2="27.5243795"
+                      />
+                      <line
+                        x1="121.11157"
+                        x2="158"
+                        y1="82.2644628"
+                        y2="85.2024793"
+                      />
+                      <line
+                        transform="translate(118.472337, 125.166476) rotate(90.000000) translate(-118.472337, -125.166476) "
+                        x1="104.160729"
+                        x2="132.783944"
+                        y1="137.400592"
+                        y2="112.93236"
+                      />
+                      <line
+                        x1="75.7355372"
+                        x2="72.7975207"
+                        y1="121.11157"
+                        y2="158"
+                      />
+                      <line
+                        transform="translate(32.833524, 118.472337) rotate(180.000000) translate(-32.833524, -118.472337) "
+                        x1="18.7527491"
+                        x2="46.9142993"
+                        y1="130.475621"
+                        y2="106.469053"
+                      />
+                      <line
+                        x1="36.8884298"
+                        x2="0"
+                        y1="75.7355372"
+                        y2="72.7975207"
+                      />
+                      <line
+                        transform="translate(39.527663, 32.833524) rotate(270.000000) translate(-39.527663, -32.833524) "
+                        x1="25.2160557"
+                        x2="53.8392707"
+                        y1="45.0676403"
+                        y2="20.5994081"
+                      />
+                      <line
+                        x1="82.2644628"
+                        x2="85.2024793"
+                        y1="36.8884298"
+                        y2="0"
+                      />
+                    </g>
+                  </g>
                 </svg>
               </div>
             </div>
-          </div>
+          </button>
         </div>
         <h2
           className="text-lg dark:text-white my-8"
@@ -386,6 +523,11 @@ exports[`Home screen tests should render the Home screen 1`] = `
               >
                 & Copy
               </button>
+              <input
+                className="h-0 w-0 focus:outline-none"
+                readOnly={true}
+                value=""
+              />
             </div>
           </form>
         </div>

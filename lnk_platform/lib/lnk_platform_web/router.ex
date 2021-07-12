@@ -10,5 +10,6 @@ defmodule LnkPlatformWeb.Router do
 
     resources "/urls", UrlController, only: [:create]
     get "/urls/path/:slug", UrlController, :show
+    get "/urls/long_url/:long_url", UrlController, :show
   end
 end

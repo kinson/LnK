@@ -56,15 +56,20 @@ describe('createShortLink() tests', () => {
     );
   });
 
-  it('should throw an error with the server message if the status is 409', async () => {
+  it('should re query the backend if the particular URL has already been shortened', async () => {
     const messageObject = { message: 'URL already exists' };
-    fetchMock.mockResolvedValue({
-      status: 409,
-      json: () => Promise.resolve(messageObject),
-    });
+    fetchMock
+      .mockResolvedValueOnce({
+        status: 409,
+        json: () => Promise.resolve(messageObject),
+      })
+      .mockResolvedValueOnce({
+        status: 200,
+        json: () => Promise.resolve(fixture),
+      });
 
-    await expect(createShortLink(fixture.long_url)).rejects.toMatchObject(
-      messageObject
+    expect(await createShortLink(fixture.long_url)).toEqual(
+      `${host}/${fixture.path_slug}`
     );
   });
 

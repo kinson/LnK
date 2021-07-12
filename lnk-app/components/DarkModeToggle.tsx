@@ -46,10 +46,10 @@ export default function DarkModeToggle(): ReactElement {
             <div className="block bg-gray-600 w-14 h-8 rounded-full" />
             <div
               className={`${
-                !darkMode && 'transform translate-x-full'
+                darkMode && 'transform translate-x-full'
               } absolute left-1 top-1 bg-white dark:bg-purple w-6 h-6 rounded-full flex items-center justify-center transition-all`}
             >
-              {!darkMode ? (
+              {darkMode ? (
                 <svg
                   ref={moonRef}
                   id="moon-icon"

@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 // eslint-disable-next-line import/no-extraneous-dependencies
 import 'tailwindcss/tailwind.css';
-import { ReactElement, useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 import type { AppProps } from 'next/app';
 import { ThemeContext } from '../contexts/ThemeContext';
 

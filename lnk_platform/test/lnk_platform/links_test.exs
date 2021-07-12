@@ -27,6 +27,22 @@ defmodule LnkPlatform.LinksTest do
       assert {:error, %Ecto.Changeset{}} = Links.create_url(@invalid_long_url)
     end
 
+    test "create_url/1 prevents duplicate paths from being used" do
+      assert {:ok, %Url{}} = Links.create_url(@valid_long_url)
+
+      path_slug_generator = fn ->
+        [@valid_attrs.path_slug, @valid_attrs.path_slug, "ANOTHERKEY"]
+        |> Enum.take_random(1)
+        |> hd()
+      end
+
+      assert {:ok, %Url{}} =
+               Links.create_url("https://google.com/search?q=query", path_slug_generator)
+
+      assert {:ok, %Url{}} =
+               Links.create_url("https://google.com/search?q=another+query", path_slug_generator)
+    end
+
     test "get_url_by_slug/1 returns url data when path_slug is found" do
       url_fixture()
       assert %Url{} = Links.get_url_by_slug("ABCDEF")

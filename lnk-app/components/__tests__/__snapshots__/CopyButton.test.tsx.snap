@@ -1,23 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CopyButton component tests should render the CopyButton component when it is disabled 1`] = `
-<button
-  className="bg-violet ml-0.5 px-3 py-2 rounded-tr-md rounded-br-md text-white bg-opacity-60 text-opacity-70"
-  disabled={true}
-  onClick={[MockFunction]}
-  type="button"
->
-  & Copy
-</button>
+Array [
+  <button
+    className="bg-violet ml-0.5 px-3 py-2 rounded-tr-md rounded-br-md text-white bg-opacity-60 text-opacity-70"
+    disabled={true}
+    onClick={[Function]}
+    type="button"
+  >
+    & Copy
+  </button>,
+  <input
+    className="h-0 w-0 focus:outline-none"
+    readOnly={true}
+    value=""
+  />,
+]
 `;
 
 exports[`CopyButton component tests should render the CopyButton component when it is not disabled 1`] = `
-<button
-  className="bg-violet ml-0.5 px-3 py-2 rounded-tr-md rounded-br-md text-white"
-  disabled={false}
-  onClick={[MockFunction]}
-  type="button"
->
-  & Copy
-</button>
+Array [
+  <button
+    className="bg-violet ml-0.5 px-3 py-2 rounded-tr-md rounded-br-md text-white"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    & Copy
+  </button>,
+  <input
+    className="h-0 w-0 focus:outline-none"
+    readOnly={true}
+    value="http://localhost:8080/ASDJD"
+  />,
+]
 `;

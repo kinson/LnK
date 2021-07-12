@@ -16,14 +16,32 @@ defmodule LnkPlatform.Links do
 
   ## Examples
 
-      iex> get_url!(123)
+      iex> get_url_by_slug(123)
       %Url{}
 
-      iex> get_url!(456)
+      iex> get_url_by_slug(456)
       nil
 
   """
+  @spec get_url_by_slug(String.t()) :: Url.t()
   def get_url_by_slug(slug), do: Repo.get_by(Url, path_slug: slug)
+
+  @doc """
+  Gets a single url using the long_url associated with it.
+
+  Returns nil if the Url does not exist.
+
+  ## Examples
+
+      iex> get_slug_by_url("https://google.com/longurl")
+      %Url{}
+
+      iex> get_slug_by_url("http://newgoogle.com/longurl")
+      nil
+
+  """
+  @spec get_slug_by_url(String.t()) :: Url.t()
+  def get_slug_by_url(long_url), do: Repo.get_by(Url, long_url: long_url)
 
   @doc """
   Creates a url with a given long_url.
@@ -39,11 +57,22 @@ defmodule LnkPlatform.Links do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_url(long_url) do
-    random_path = LnkPlatform.LinkGenerator.generate_random_path()
+  @spec create_url(String.t(), (() -> String.t()) | nil) :: {:ok, Url.t()}
+  def create_url(long_url, generator_fn \\ nil) do
+    random_path =
+      case generator_fn do
+        nil -> LnkPlatform.LinkGenerator.generate_random_path()
+        generator_fn -> generator_fn.()
+      end
 
-    %Url{}
-    |> Url.changeset(%{long_url: long_url, path_slug: random_path})
-    |> Repo.insert(returning: true)
+    case Repo.get_by(Url, path_slug: random_path) do
+      nil ->
+        %Url{}
+        |> Url.changeset(%{long_url: long_url, path_slug: random_path})
+        |> Repo.insert(returning: true)
+
+      _ ->
+        create_url(long_url)
+    end
   end
 end

@@ -20,13 +20,13 @@ describe('DarkModeToggle component tests', () => {
       'dark-mode-toggle-container'
     );
 
-    expect(getById(component.container, 'moon-icon')).toBeTruthy();
-    expect(getById(component.container, 'sun-icon')).toBeFalsy();
+    expect(getById(component.container, 'sun-icon')).toBeTruthy();
+    expect(getById(component.container, 'moon-icon')).toBeFalsy();
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     fireEvent.click(topLevelDiv!);
 
-    expect(getById(component.container, 'sun-icon')).toBeTruthy();
-    expect(getById(component.container, 'moon-icon')).toBeFalsy();
+    expect(getById(component.container, 'moon-icon')).toBeTruthy();
+    expect(getById(component.container, 'sun-icon')).toBeFalsy();
   });
 });
