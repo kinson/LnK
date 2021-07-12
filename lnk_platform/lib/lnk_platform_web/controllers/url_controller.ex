@@ -54,8 +54,7 @@ defmodule LnkPlatformWeb.UrlController do
       {:long_url, {_, [validation: :format]}} ->
         put_status(conn, 400) |> render(:error, error: :bad_format)
 
-      err ->
-        IO.inspect(err)
+      _ ->
         put_status(conn, 500) |> render(:error, error: :server)
     end
   end

@@ -87,7 +87,7 @@ export default function HomeScreen({ redirectError }: Props): ReactElement {
                   Got a long link? Just paste it below and click shorten ✨
                 </h2>
 
-                <div className="w-full bg-darkGray bg-opacity-20 shadow-md p-8 rounded-md">
+                <div className="w-full bg-darkGray bg-opacity-30 dark:bg-opacity-40 shadow-md p-8 rounded-md">
                   <form className="flex flex-col">
                     <div className="py-1 flex items-center justify-between">
                       <label

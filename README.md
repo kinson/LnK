@@ -23,6 +23,7 @@ From the project root, run `make server` to:
 1) Start the Docker container
 2) Start the backend server
 3) Start the frontend web application
+4) Go to http://localhost:8080 to use the web application
 
 ### Stop the Server
 From the project root, run `make stop` to:

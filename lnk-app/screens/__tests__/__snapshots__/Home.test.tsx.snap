@@ -164,7 +164,7 @@ exports[`Home screen tests should display an error message when the long url can
           Got a long link? Just paste it below and click shorten ✨
         </h2>
         <div
-          className="w-full bg-darkGray bg-opacity-20 shadow-md p-8 rounded-md"
+          className="w-full bg-darkGray bg-opacity-30 dark:bg-opacity-40 shadow-md p-8 rounded-md"
         >
           <form
             className="flex flex-col"
@@ -259,7 +259,7 @@ exports[`Home screen tests should display an error message when the long url can
                 & Copy
               </button>
               <input
-                className="h-0 w-0 focus:outline-none"
+                className="h-px w-px focus:outline-none bg-darkGray bg-opacity-30 dark:bg-opacity-40"
                 readOnly={true}
                 value=""
               />
@@ -431,7 +431,7 @@ exports[`Home screen tests should render the Home screen 1`] = `
           Got a long link? Just paste it below and click shorten ✨
         </h2>
         <div
-          className="w-full bg-darkGray bg-opacity-20 shadow-md p-8 rounded-md"
+          className="w-full bg-darkGray bg-opacity-30 dark:bg-opacity-40 shadow-md p-8 rounded-md"
         >
           <form
             className="flex flex-col"
@@ -526,7 +526,7 @@ exports[`Home screen tests should render the Home screen 1`] = `
                 & Copy
               </button>
               <input
-                className="h-0 w-0 focus:outline-none"
+                className="h-px w-px focus:outline-none bg-darkGray bg-opacity-30 dark:bg-opacity-40"
                 readOnly={true}
                 value=""
               />

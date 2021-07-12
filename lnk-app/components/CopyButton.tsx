@@ -48,7 +48,7 @@ export default function ShortenButton({ link, disabled }: Props): ReactElement {
       <input
         ref={inputRef}
         value={link ?? ''}
-        className="h-0 w-0 focus:outline-none"
+        className="h-px w-px focus:outline-none bg-darkGray bg-opacity-30 dark:bg-opacity-40"
         readOnly
       />
     </>
