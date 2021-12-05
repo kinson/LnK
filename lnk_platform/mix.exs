@@ -34,15 +34,17 @@ defmodule LnkPlatform.MixProject do
   defp deps do
     [
       {:cors_plug, "~> 2.0"},
-      {:phoenix, "~> 1.5.9"},
-      {:phoenix_ecto, "~> 4.1"},
-      {:ecto_sql, "~> 3.4"},
-      {:postgrex, ">= 0.0.0"},
-      {:telemetry_metrics, "~> 0.4"},
-      {:telemetry_poller, "~> 0.4"},
-      {:gettext, "~> 0.11"},
-      {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:ecto_sqlite3, "~> 0.7.2"},
+      {:phoenix, "~> 1.6.2"},
+      {:phoenix_ecto, "~> 4.4"},
+      {:phoenix_html, "~> 3.1"},
+      {:ecto_sql, "~> 3.7"},
+      {:postgrex, "~> 0.15"},
+      {:telemetry_metrics, "~> 0.6"},
+      {:telemetry_poller, "~> 0.5"},
+      {:gettext, "~> 0.18"},
+      {:jason, "~> 1.2"},
+      {:plug_cowboy, "~> 2.5"}
     ]
   end
 

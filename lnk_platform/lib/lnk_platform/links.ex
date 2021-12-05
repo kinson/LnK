@@ -5,6 +5,8 @@ defmodule LnkPlatform.Links do
   """
 
   import Ecto.Query, warn: false
+
+  require Logger
   alias LnkPlatform.Repo
 
   alias LnkPlatform.Links.Url
@@ -24,7 +26,10 @@ defmodule LnkPlatform.Links do
 
   """
   @spec get_url_by_slug(String.t()) :: Url.t()
-  def get_url_by_slug(slug), do: Repo.get_by(Url, path_slug: slug)
+  def get_url_by_slug(slug) when is_binary(slug),
+    do: Repo.get_by(Url, path_slug: String.downcase(slug))
+
+  def get_url_by_slug(_), do: nil
 
   @doc """
   Gets a single url using the long_url associated with it.
@@ -61,9 +66,10 @@ defmodule LnkPlatform.Links do
   def create_url(long_url, generator_fn \\ nil) do
     random_path =
       case generator_fn do
-        nil -> LnkPlatform.LinkGenerator.generate_random_path()
+        nil -> LnkPlatform.LinkGenerator.generate_random_path(3)
         generator_fn -> generator_fn.()
       end
+      |> String.downcase()
 
     case Repo.get_by(Url, path_slug: random_path) do
       nil ->
@@ -72,6 +78,7 @@ defmodule LnkPlatform.Links do
         |> Repo.insert(returning: true)
 
       _ ->
+        Logger.warn("Generated duplicate short URL: #{random_path}")
         create_url(long_url)
     end
   end

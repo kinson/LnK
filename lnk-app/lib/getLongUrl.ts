@@ -1,5 +1,10 @@
+const baseUrl =
+  process.env.NODE_ENV === 'production'
+    ? 'https://lnk-api.samwhunter.com'
+    : 'http://localhost:4000';
+
 export async function getLongUrl(path: string): Promise<string> {
-  const url = `http://localhost:4000/api/urls/path/${path}`;
+  const url = `${baseUrl}/api/urls/path/${path}`;
   const response = await fetch(url);
 
   if (response.status === 404) {

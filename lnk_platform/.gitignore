@@ -28,3 +28,7 @@ lnk_platform-*.tar
 /priv/static/
 
 tmp/
+
+.env
+
+priv/database.*

@@ -1,9 +1,12 @@
 import { formatShortLink } from './formatShortUrl';
 
+const baseUrl =
+  process.env.NODE_ENV === 'production'
+    ? 'https://lnk-api.samwhunter.com'
+    : 'http://localhost:4000';
+
 export async function getShortUrl(longUrl: string): Promise<string> {
-  const url = `http://localhost:4000/api/urls/long_url/${encodeURIComponent(
-    longUrl
-  )}`;
+  const url = `${baseUrl}/api/urls/long_url/${encodeURIComponent(longUrl)}`;
   const response = await fetch(url);
 
   if (response.status === 404) {

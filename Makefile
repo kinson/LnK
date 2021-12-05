@@ -6,26 +6,20 @@
 # compile code, build container images, initialize a database,
 # anything else that needs to happen before your server is started
 # for the first time
-setup: docker_up backend_deps frontend_deps docker_down
+setup: backend_deps frontend_deps 
 
 # `make server` will be used after `make setup` in order to start
 # an http server process that listens on any unreserved port
 #	of your choice (e.g. 8080). 
-server: docker_up start_server start_frontend
+server: start_server start_frontend
 
-stop: stop_server stop_frontend docker_down
+stop: stop_server stop_frontend 
 
 # `make test` will be used after `make setup` in order to run
 # your test suite.
-test: docker_up test_backend docker_down test_frontend
+test: test_backend test_frontend
 
-docker_up:
-	docker-compose -f lnk_platform/docker-compose.yml up &
-	while ! nc -z localhost 5432; do sleep 1; done;
-
-docker_down:
-	docker-compose -f lnk_platform/docker-compose.yml down
-	while nc -z localhost 5432; do sleep 1; done;
+deploy: deploy_backend deploy_frontend
 
 backend_deps:
 	cd lnk_platform && mix do deps.get, deps.compile, ecto.create, ecto.migrate && cd ../
@@ -50,3 +44,9 @@ test_backend:
 
 test_frontend:
 	cd lnk-app && yarn test && cd ../
+
+deploy_backend:
+	cd lnk_platform && sh ./deploy.sh && cd ../
+
+deploy_frontend: stop_frontend
+	cd lnk-app && NODE_ENV=production && yarn build && NODE_ENV=production yarn start --port 4200

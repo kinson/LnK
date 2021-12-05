@@ -1,6 +1,11 @@
 import { formatShortLink } from './formatShortUrl';
 import { getShortUrl } from './getShortUrl';
 
+const baseUrl =
+  process.env.NODE_ENV === 'production'
+    ? 'https://lnk-api.samwhunter.com'
+    : 'http://localhost:4000';
+
 function validateLongUrl(longUrl: string): boolean {
   return !!longUrl.match(/http[s]{0,1}:\/\/.*\..+/);
 }
@@ -10,7 +15,7 @@ export async function createShortLink(longUrl: string): Promise<string> {
     throw new Error('URL must have format http(s)://site.com');
   }
 
-  const response = await fetch('http://localhost:4000/api/urls', {
+  const response = await fetch(`${baseUrl}/api/urls`, {
     method: 'POST',
     body: JSON.stringify({
       long_url: longUrl,

@@ -1,13 +1,7 @@
 use Mix.Config
 
 # Configure your database
-config :lnk_platform, LnkPlatform.Repo,
-  username: "postgres",
-  password: "password",
-  database: "lnk_platform_dev",
-  hostname: "localhost",
-  show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+config :lnk_platform, LnkPlatform.Repo, database: "priv/database.db"
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
