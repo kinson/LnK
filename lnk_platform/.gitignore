@@ -25,10 +25,9 @@ lnk_platform-*.tar
 # Since we are building assets from assets/,
 # we ignore priv/static. You may want to comment
 # this depending on your deployment strategy.
-/priv/static/
-
 tmp/
 
 .env
 
 priv/database.*
+test/priv

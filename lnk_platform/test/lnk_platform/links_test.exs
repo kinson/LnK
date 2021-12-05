@@ -8,7 +8,7 @@ defmodule LnkPlatform.LinksTest do
 
     @valid_long_url "http://google.com/longurkl"
     @invalid_long_url "http://google."
-    @valid_attrs %{long_url: @valid_long_url, path_slug: "ABCDEF"}
+    @valid_attrs %{long_url: @valid_long_url, path_slug: "abcdef"}
 
     def url_fixture() do
       {:ok, url} =
@@ -44,6 +44,11 @@ defmodule LnkPlatform.LinksTest do
     end
 
     test "get_url_by_slug/1 returns url data when path_slug is found" do
+      url_fixture()
+      assert %Url{} = Links.get_url_by_slug("abcdef")
+    end
+
+    test "get_url_by_slug/1 returns url data when path_slug is found regardless of casing" do
       url_fixture()
       assert %Url{} = Links.get_url_by_slug("ABCDEF")
     end

@@ -39,7 +39,6 @@ defmodule LnkPlatform.MixProject do
       {:phoenix_ecto, "~> 4.4"},
       {:phoenix_html, "~> 3.1"},
       {:ecto_sql, "~> 3.7"},
-      {:postgrex, "~> 0.15"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 0.5"},
       {:gettext, "~> 0.18"},

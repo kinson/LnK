@@ -11,7 +11,6 @@ use Mix.Config
 # before starting your production server.
 config :lnk_platform, LnkPlatformWeb.Endpoint, url: [host: "lnk-api.samwhunter.com"]
 
-
 # Do not print debug messages in production
 config :logger, level: :notice
 

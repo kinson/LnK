@@ -3,7 +3,7 @@ defmodule LnkPlatformWeb.UrlControllerTest do
 
   alias LnkPlatform.Links.Url
 
-  @valid_attrs %{long_url: "https://google.com/longurl", path_slug: "ABCDEF"}
+  @valid_attrs %{long_url: "https://google.com/longurl", path_slug: "abcdef"}
 
   def url_fixture() do
     {:ok, url} =
