@@ -1,3 +1,4 @@
+#!/bin/bash
 source .env
 export MIX_ENV=prod
 

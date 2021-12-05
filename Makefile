@@ -46,7 +46,7 @@ test_frontend:
 	cd lnk-app && yarn test && cd ../
 
 deploy_backend:
-	cd lnk_platform && sh ./deploy.sh && cd ../
+	cd lnk_platform && ./deploy.sh && cd ../
 
-deploy_frontend: stop_frontend
-	cd lnk-app && NODE_ENV=production && yarn build && NODE_ENV=production yarn start --port 4200
+deploy_frontend:
+	cd lnk-app && ./deploy.sh && cd ../

@@ -12,6 +12,7 @@ config :lnk_platform,
 
 # Configures the endpoint
 config :lnk_platform, LnkPlatformWeb.Endpoint,
+  server: true,
   url: [host: "localhost"],
   secret_key_base: "fv5hHuHpKKK6GmjpNEPAoL0Zad9/vPrcc9AizSjW8A08inlSUBFbujfZz2ku2z7T",
   render_errors: [view: LnkPlatformWeb.ErrorView, accepts: ~w(json), layout: false],
