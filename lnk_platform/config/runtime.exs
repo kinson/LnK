@@ -4,7 +4,11 @@ if config_env() == :prod do
   config :lnk_platform, LnkPlatformWeb.Endpoint, server: true
 
   # Configure your database
-  config :lnk_platform, LnkPlatform.Repo, database: "priv/database.db"
+  config :lnk_platform, LnkPlatform.Repo,
+    database: "priv/database.db",
+    cache_size: -2000,
+    temp_store: :file,
+    journal_mode: :delete
 
   secret_key_base =
     System.get_env("SECRET_KEY_BASE") ||
