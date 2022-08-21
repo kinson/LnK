@@ -5,7 +5,7 @@ defmodule LnkPlatform.MixProject do
     [
       app: :lnk_platform,
       version: "0.1.0",
-      elixir: "~> 1.7",
+      elixir: "~> 1.13",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
@@ -35,10 +35,12 @@ defmodule LnkPlatform.MixProject do
     [
       {:cors_plug, "~> 2.0"},
       {:ecto_sqlite3, "~> 0.7.2"},
-      {:phoenix, "~> 1.6.2"},
+      {:ecto_sql, "~> 3.7"},
+      {:ecto_psql_extras, "~> 0.7"},
+      {:postgrex, "~> 0.15"},
+      {:phoenix, "~> 1.6"},
       {:phoenix_ecto, "~> 4.4"},
       {:phoenix_html, "~> 3.1"},
-      {:ecto_sql, "~> 3.7"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 0.5"},
       {:gettext, "~> 0.18"},

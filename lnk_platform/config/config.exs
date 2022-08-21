@@ -5,7 +5,7 @@
 # is restricted to this project.
 
 # General application configuration
-use Mix.Config
+import Mix.Config
 
 config :lnk_platform,
   ecto_repos: [LnkPlatform.Repo]

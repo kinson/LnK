@@ -30,4 +30,6 @@ tmp/
 .env
 
 priv/database.*
+database.db
+rel/
 test/priv
